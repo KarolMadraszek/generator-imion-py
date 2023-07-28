@@ -18,9 +18,11 @@ try:
     sex = str(input('Podaj swoją płeć (M/K): '))
     if sex in ['m', 'M']:
         random_male_name = random.choice(male_names)
-        print("Wylosowane imię to:", random_male_name)
-    else:
+        print("Wylosowane imię to:", random_male_name.upper())
+    elif sex in ['k', 'K']:
         random_female_name = random.choice(female_names)
-        print("Wylosowane imię dla płci żeńskiej:", random_female_name)
+        print("Wylosowane imię dla płci żeńskiej:", random_female_name.upper())
+    else:
+        raise NotSex
 except NotSex:
     print('Niepoprawna wartość.')
